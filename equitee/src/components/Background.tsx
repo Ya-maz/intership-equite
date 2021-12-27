@@ -1,4 +1,3 @@
-import { ThemeProvider } from "@mui/material/styles";
 import BackgroundImage from "./customsUI/BackgroundImage";
 import BackgroundColor from "./customsUI/BackgroundColor";
 import Image from "next/image";
@@ -6,11 +5,9 @@ import main from "../../public/img.png";
 import wave from "../../public/bg.svg";
 import brand from "../../public/brand.svg";
 import brandxs from "../../public/brandxs.svg";
-import theme from "../theme";
 
 const Background: React.FC = (props) => {
   return (
-    <ThemeProvider theme={theme}>
       <BackgroundColor>
         <BackgroundImage
           sx={{
@@ -82,7 +79,6 @@ const Background: React.FC = (props) => {
         </BackgroundImage>
         {props.children}
       </BackgroundColor>
-    </ThemeProvider>
   );
 };
 

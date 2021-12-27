@@ -7,7 +7,6 @@ const BackgroundColor = styled(Grid, {
 })(({ theme }) => ({
   background: theme.palette.background.default,
   position: "fixed",
-  right: "0vw",
   height: "100vh",
   width: "100vw",
   overflow: "hidden",

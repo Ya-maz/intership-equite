@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
 import { Grid, Typography } from "@mui/material";
-import { ThemeProvider } from "@mui/material/styles";
 import NeonButton from "./customsUI/NeonButton";
 import Cub from "./customsUI/CubCarousel";
 import theme from "../theme";
@@ -16,7 +15,7 @@ const Main: React.FC = () => {
   });
 
   return (
-    <ThemeProvider theme={theme}>
+    <>
       <Grid
         component="section"
         container
@@ -85,7 +84,7 @@ const Main: React.FC = () => {
           ))}
         </Grid>
       </Grid>
-    </ThemeProvider>
+      </>
   );
 };
 
