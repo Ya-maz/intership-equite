@@ -5,56 +5,59 @@ import main from "../../public/img.png";
 import wave from "../../public/bg.svg";
 import brand from "../../public/brand.svg";
 import brandxs from "../../public/brandxs.svg";
+import { Grid } from "@mui/material";
 
 const Background: React.FC = (props) => {
   return (
-      <BackgroundColor>
-        <BackgroundImage
-          sx={{
-            width: {xs: "160vw", md: "70vw",},
-            height: { xs: "100vw", md: "70vh", },
-            top: {xs: "33vh", md: 0},
-            right: {xs: "0vw", md: "0vw",},
-          }}
-        >
-          <Image
-            alt="background-image"
-            src={main}
-            layout="fill"
-            objectFit="cover"
-            quality={100}
-          />
-        </BackgroundImage>
+    <BackgroundColor>
+      <BackgroundImage
+        sx={{
+          width: { xs: "160vw", md: "70vw" },
+          height: { xs: "100vw", md: "70vh" },
+          top: { xs: "33vh", md: 0 },
+          right: { xs: "0vw", md: "0vw" },
+        }}
+      >
+        <Image
+          alt="background-image"
+          src={main}
+          layout="fill"
+          objectFit="cover"
+          quality={100}
+        />
+      </BackgroundImage>
 
-        <BackgroundImage
-          sx={{
-            width: "100vw",
-            height: "50vh",
-            top: "45vh",
-          }}
-        >
-          <Image
-            alt="background-image"
-            src={wave}
-            layout="fill"
-            objectFit="cover"
-            quality={100}
-          />
-        </BackgroundImage>
+      <BackgroundImage
+        sx={{
+          width: "100vw",
+          height: "50vh",
+          top: "45vh",
+        }}
+      >
+        <Image
+          alt="background-image"
+          src={wave}
+          layout="fill"
+          objectFit="cover"
+          quality={100}
+        />
+      </BackgroundImage>
 
+      <Grid container justifyContent="center">
         <BackgroundImage
           sx={{
-            display: {xs: "none", md: "block"},
-            width: "70vw",
-            height: "9vh",
-            left: "15vw",
+            display: { xs: "none", md: "block" },
+            minWidth: "70vw",
+            maxWidth: "100vw",
+            minHeight: "5vh",
+            maxHeight: "30vh",
             top: "75vh",
           }}
         >
           <Image
             alt="background-image"
             src={brand}
-            layout="fill"
+            layout="intrinsic"
             objectFit="cover"
             quality={100}
           />
@@ -62,23 +65,25 @@ const Background: React.FC = (props) => {
 
         <BackgroundImage
           sx={{
-            display: {xs: "block", md: "none"},
-            width: "90vw",
-            height: "11vh",
-            left: "5vw",
+            display: { xs: "block", md: "none" },
+            minWidth: "70vw",
+            maxWidth: "100vw",
+            minHeight: "5vh",
+            maxHeight: "30vh",
             top: "75vh",
           }}
         >
           <Image
             alt="background-image"
             src={brandxs}
-            layout="fill"
+            layout="intrinsic"
             objectFit="cover"
             quality={100}
           />
         </BackgroundImage>
-        {props.children}
-      </BackgroundColor>
+      </Grid>
+      {props.children}
+    </BackgroundColor>
   );
 };
 

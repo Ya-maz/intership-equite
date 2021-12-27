@@ -6,7 +6,7 @@ const BackgroundImage = styled(Box, {
   slot: "bgi",
 })({
   position: "fixed",
-  overflow: "hidden",
+  overflow: "auto",
   zIndex: "-1"
 });
 

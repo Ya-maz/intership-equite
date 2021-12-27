@@ -19,6 +19,7 @@ const Main: React.FC = () => {
       <Grid
         component="section"
         container
+        direction="column"
         alignItems="center"
         sx={{
           mt: {xs: 13,md:15},
@@ -76,10 +77,10 @@ const Main: React.FC = () => {
         <Grid item>
           {ItemsCub.map((_, i) => (
             <Cub sx={{
-              mt: {xs: "33vh", md: 0},
+              mt: {xs: "250%", md: 0},
               mx: {xs: "2vw", md: ".5vw"},
-              width: { xs: "3vw", md: ".75vw" },
-              height: { xs: "3vw", md: "1.5vh" },
+              width: { xs: "15px", md: "15px" },
+              height: { xs: "15px", md: "15px" },
             }} key={i} active={active === i} />
           ))}
         </Grid>
