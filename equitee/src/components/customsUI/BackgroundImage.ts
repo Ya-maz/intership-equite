@@ -7,7 +7,9 @@ const BackgroundImage = styled(Box, {
 })({
   position: "fixed",
   overflow: "auto",
-  zIndex: "-1"
+  zIndex: "-1",
+
+
 });
 
 export default BackgroundImage;

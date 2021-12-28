@@ -6,8 +6,18 @@ import wave from "../../public/bg.svg";
 import brand from "../../public/brand.svg";
 import brandxs from "../../public/brandxs.svg";
 import { Grid } from "@mui/material";
+import Cub from "./customsUI/CubCarousel"
+import { useState, useEffect } from "react";
 
 const Background: React.FC = (props) => {
+  const [active, setActive] = useState(0);
+  const ItemsCub = [0, 1, 2];
+  useEffect(() => {
+    const timerId = setInterval(() => {
+      setActive((active + 1) % ItemsCub.length);
+    }, 3000);
+    return () => clearInterval(timerId);
+  });
   return (
     <BackgroundColor>
       <BackgroundImage
@@ -46,7 +56,7 @@ const Background: React.FC = (props) => {
       <Grid container justifyContent="center">
         <BackgroundImage
           sx={{
-            display: { xs: "none", md: "block" },
+            display: { xs: "none", md: "flex" },
             minWidth: "70vw",
             maxWidth: "100vw",
             minHeight: "5vh",
@@ -65,12 +75,13 @@ const Background: React.FC = (props) => {
 
         <BackgroundImage
           sx={{
-            display: { xs: "block", md: "none" },
+            display: { xs: "flex", md: "none" },
             minWidth: "70vw",
             maxWidth: "100vw",
             minHeight: "5vh",
             maxHeight: "30vh",
             top: "75vh",
+            // position: "relative"
           }}
         >
           <Image

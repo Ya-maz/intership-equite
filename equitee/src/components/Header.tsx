@@ -4,7 +4,6 @@ import {
   IconButton,
   Button,
   Typography,
-  Icon,
 } from "@mui/material";
 import Image from "next/image";
 import WhiteButton from "./customsUI/WhiteButton";
@@ -16,17 +15,18 @@ import theme from "../theme";
 
 const Header: React.FC = () => {
   return (
-    <AppBar sx={{ boxShadow: 0 }} color="transparent" position="fixed">
+    // <AppBar sx={{ boxShadow: 0 }} color="transparent">
       <Grid
         container
         alignItems="center"
         sx={{
-          justifyContent: { xs: "space-between", md: "space-around" },
+          justifyContent: {
+            xs: "space-between", md: "space-between" },
           mt: 0.5,
         }}
       >
-        <Grid item>
-          <IconButton>
+        <Grid item sx={{pt:1}}>
+          <IconButton sx={{pt:0}}>
             <Image
               width={48}
               height={56}
@@ -45,6 +45,8 @@ const Header: React.FC = () => {
               textTransform: "uppercase",
               color: theme.palette.secondary.contrastText,
               px: theme.spacing(2),
+              position: "relative",
+              top: "1px",
             }}
           >
             equite.io
@@ -75,16 +77,21 @@ const Header: React.FC = () => {
             }}
           >
             pro
-          </WhiteButton>
-          <InvestorButton
+        </WhiteButton>
+        <WhiteButton
             disableRipple={true}
             variant="outlined"
             sx={{
               display: { xs: "none", md: "inline-flex" },
+              color: theme.palette.secondary.contrastText,
+              border: `1px solid ${theme.palette.secondary.contrastText}`,
+              ":hover": {
+                border: `1px solid ${theme.palette.secondary.main}`
+              }
             }}
           >
-            ИНВЕСТОРУ
-          </InvestorButton>
+            инвестору
+          </WhiteButton>
         </Grid>
 
         <Grid item>
@@ -139,7 +146,7 @@ const Header: React.FC = () => {
               width={22}
               height={15}
               src={menu}
-              alt="logo"
+              alt="menu"
               layout="fixed"
               objectFit="contain"
               quality={100}
@@ -147,7 +154,8 @@ const Header: React.FC = () => {
           </Button>
         </Grid>
       </Grid>
-    </AppBar>
+      // </AppBar>
+
   );
 };
 

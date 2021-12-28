@@ -22,20 +22,24 @@ const Main: React.FC = () => {
         direction="column"
         alignItems="center"
         sx={{
-          mt: {xs: 13,md:15},
-          ml: {xs: 0, md:30},
-          maxWidth: { md:550},
-          justifyContent: { xs: "center", md: "start" }
+          mt: { xs: 5, md: 10 },
+          // ml: {xs: 0, md:"15vw"},
+          maxWidth: { md: 550 },
+          justifyContent: { xs: "center", md: "start" },
         }}
       >
-        <Grid item sx={{ textAlign: { xs: 'center', md: 'start' }}}>
-          <Typography color="white" variant="h1" >
+        <Grid item sx={{ textAlign: { xs: "center", md: "start" } }}>
+          <Typography color="white" variant="h1">
             Поделитесь своими результатами
           </Typography>
         </Grid>
-        <Grid item sx={{
-          textAlign: { xs: 'center', md: 'start' },
-          maxWidth: {xs: 300, md:550}}}>
+        <Grid
+          item
+          sx={{
+            textAlign: { xs: "center", md: "start" },
+            maxWidth: { xs: 300, md: 550 },
+          }}
+        >
           <Typography
             color="secondary"
             variant="h2"
@@ -53,6 +57,7 @@ const Main: React.FC = () => {
           item
           sx={{
             mt: 3,
+            alignSelf: { xs: "center", md: "start" },
           }}
         >
           <NeonButton color="secondary" variant="contained" sx={{ px: 3.5 }}>
@@ -68,24 +73,23 @@ const Main: React.FC = () => {
         </Grid>
       </Grid>
 
-      <Grid
-        container
-        justifyContent="center"
-        alignItems="center"
-        sx={{ mt: 8 }}
-      >
+      <Grid container justifyContent="center" sx={{ mt: 8 }}>
         <Grid item>
           {ItemsCub.map((_, i) => (
-            <Cub sx={{
-              mt: {xs: "250%", md: 0},
-              mx: {xs: "2vw", md: ".5vw"},
-              width: { xs: "15px", md: "15px" },
-              height: { xs: "15px", md: "15px" },
-            }} key={i} active={active === i} />
+            <Cub
+              sx={{
+                mt: { xs: "30vh", md: "10vh" },
+                mx: { xs: "2vw", md: ".5vw" },
+                width: { xs: "15px", md: "15px" },
+                height: { xs: "15px", md: "15px" },
+              }}
+              key={i}
+              active={active === i}
+            />
           ))}
         </Grid>
       </Grid>
-      </>
+    </>
   );
 };
 
